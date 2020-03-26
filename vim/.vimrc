@@ -15,18 +15,3 @@ let g:rg_command = 'rg --vimgrep -S'
 
 command! MakeTags !rg --files | ctags -R --links=no -L -
 
-" Useful Commands:
-
-" Move between windows
-"  CTRL-W h,j,k,l (direction)
-
-" Quickfix
-" > :cn (next), :cn (previous)
-
-" CtrlP
-" CTRL-j,k (move between results)
-" CTRL-v (open result in vertical split)
-
-" Vim Terminal
-" > :term [command]
-" CTRL-W N (switch to normal mode, allows moving, selecting, copying, etc.)
