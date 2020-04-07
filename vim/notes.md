@@ -1,5 +1,8 @@
 # Useful Commands:
 
+" Vim Plug
+`> :PlugInstall` (install plugins)
+
 Move between windows
 `CTRL-W h,j,k or l` (direction)
 
@@ -13,3 +16,6 @@ CtrlP
 Vim Terminal
 `> :term [command]`
 `CTRL-W N` (switch to normal mode, allows moving, selecting, copying, etc.)
+
+Git Gutter
+`\hp` (hunk/change preview)
