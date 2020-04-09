@@ -1,3 +1,4 @@
+
 # Useful Commands:
 
 " Vim Plug
@@ -19,3 +20,12 @@ Vim Terminal
 
 Git Gutter
 `\hp` (hunk/change preview)
+
+Go to definition
+`gd` (go to definition in same file)
+`CTRL-]` (go to definition using ctags)
+`CTRL-O` (go back)
+
+Completion
+`CTRL-P or N` (simple word completion)
+
