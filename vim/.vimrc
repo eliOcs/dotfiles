@@ -1,9 +1,11 @@
 " General settings
 set nocompatible " no need to support old vi
+set ignorecase
 set smartcase " if you use all lowercase then case insensitive
 set clipboard=unnamedplus " sync clipboard with OS
 set undofile " persist changes in file
 filetype plugin on " enable commands per file type
+set pumheight=10 " limit suggestion menu size 
 
 " Plugins
 call plug#begin('~/.vim/plugged')
@@ -25,10 +27,10 @@ let g:ale_fixers = {
 \  'javascript': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '●'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 autocmd VimEnter * :highlight! ALEErrorSign ctermfg=1 guifg=#ac4142 ctermbg=10 guibg=#282828
 autocmd VimEnter * :highlight! ALEWarningSign ctermfg=3 guifg=#f4bf75 ctermbg=10 guibg=#282828
 autocmd VimEnter * :highlight! ALEError ctermbg=2 guibg=#383838
@@ -42,6 +44,7 @@ let g:gutentags_file_list_command = {
 \}
 
 " Mappings
+set timeoutlen=1000 ttimeoutlen=10
 let mapleader = " "
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>b :Buffers<CR>

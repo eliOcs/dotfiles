@@ -6,8 +6,13 @@
 ## Move between windows
 `CTRL-W h,j,k or l` (direction)
 
-## Quickfix
+## Quickfix (Global)
+`> :copen` (open)
 `> :cn` (next) or `:cn` (previous)
+
+## Loclist (Current window)
+`> :lopen` (open)
+`> :ln` (next) or `:ln` (previous)
 
 ## CtrlP
 `CTRL-j or k` (move between results)
