@@ -2,7 +2,7 @@
 set nocompatible " no need to support old vi
 set ignorecase
 set smartcase " if you use all lowercase then case insensitive
-set clipboard=unnamedplus " sync clipboard with OS
+" set clipboard=unnamedplus " sync clipboard with OS
 set undofile " persist changes in file
 filetype plugin on " enable commands per file type
 set pumheight=10 " limit suggestion menu size 
@@ -33,8 +33,8 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 autocmd VimEnter * :highlight! ALEErrorSign ctermfg=1 guifg=#ac4142 ctermbg=10 guibg=#282828
 autocmd VimEnter * :highlight! ALEWarningSign ctermfg=3 guifg=#f4bf75 ctermbg=10 guibg=#282828
-autocmd VimEnter * :highlight! ALEError ctermbg=2 guibg=#383838
-autocmd VimEnter * :highlight! ALEWarning ctermbg=2 guibg=#383838
+autocmd VimEnter * :highlight! ALEError ctermbg=8 guibg=#383838
+autocmd VimEnter * :highlight! ALEWarning ctermbg=8 guibg=#383838
 
 " Tags
 let g:gutentags_file_list_command = {
@@ -71,10 +71,13 @@ set foldlevelstart=99
 
 " Theme
 syntax enable
-set termguicolors
-colorscheme base16-default-dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=16
+  source ~/.vimrc_background
+endif
 let g:lightline = {
 \  'colorscheme': 'seoul256',
 \  }
 set laststatus=2
 set noshowmode
+set rtp+=/usr/local/opt/fzf
