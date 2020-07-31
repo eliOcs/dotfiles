@@ -5,7 +5,8 @@ set smartcase " if you use all lowercase then case insensitive
 " set clipboard=unnamedplus " sync clipboard with OS
 set undofile " persist changes in file
 filetype plugin on " enable commands per file type
-set pumheight=10 " limit suggestion menu size 
+set pumheight=10 " limit suggestion menu size
+set mouse=n " allow using mouse
 
 " Plugins
 call plug#begin('~/.vim/plugged')
@@ -16,7 +17,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree' " file manager
   Plug 'airblade/vim-gitgutter' " Git gutter
   Plug 'ludovicchabant/vim-gutentags' " tags
-  Plug 'sheerun/vim-polyglot' " better syntax highlighting
+  Plug 'pangloss/vim-javascript' " better javascript syntax highlighting
   Plug 'chriskempson/base16-vim' " theme
   Plug 'itchyny/lightline.vim' " better status line
 call plug#end()
@@ -54,6 +55,7 @@ nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>gg :GitGutterToggle<CR>
 nnoremap <Leader>ln :set invnumber<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
 
 " Identation
 set tabstop=2
@@ -66,7 +68,8 @@ let g:gitgutter_enabled = 0
 set updatetime=500
 
 " Code folding
-set foldmethod=syntax
+set nofoldenable
+set foldmethod=indent
 set foldlevelstart=99
 
 " Theme

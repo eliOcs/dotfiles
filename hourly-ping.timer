@@ -1,0 +1,9 @@
+[Unit]
+Description=Run ping service every hour
+
+[Timer]
+Unit=ping.service
+OnCalendar=hourly
+
+[Install]
+WantedBy=default.target

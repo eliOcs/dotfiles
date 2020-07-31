@@ -1,0 +1,7 @@
+[Unit]
+Description=Play ping sound
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/elio/dotfiles
+ExecStart=play ping.ogg
