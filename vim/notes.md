@@ -35,6 +35,7 @@
 `CTRL-P or N` (simple word completion)
 
 ## Fold/Collapse code
+`zi` (toggle fold)
 `zo` (open fold) or `zc` (close fold)
 
 ## Changes
