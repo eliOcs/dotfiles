@@ -79,12 +79,12 @@ set foldlevelstart=99
 
 " Theme
 syntax enable
+let g:javascript_plugin_jsdoc = 1
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=16
   source ~/.vimrc_background
 endif
-let g:javascript_plugin_jsdoc = 1
-set termguicolors
+"set termguicolors
 colorscheme base16-default-dark
 let g:lightline = {
 \  'colorscheme': 'seoul256',
