@@ -1,4 +1,5 @@
 " General settings
+set backspace=2 " allow backspacing over everything
 set nocompatible " no need to support old vi
 set ignorecase
 set smartcase " if you use all lowercase then case insensitive
