@@ -10,7 +10,8 @@ set mouse=n " allow using mouse
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-  Plug 'junegunn/fzf.vim' " fuzzy file finder
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy file finder (1/2)
+  Plug 'junegunn/fzf.vim' " fuzzy file finder (2/2)
   Plug 'stefandtw/quickfix-reflector.vim' " Allow editing quickfix list
   Plug 'dense-analysis/ale' " linting, formatting
   Plug 'mhinz/vim-grepper' " better grep
@@ -26,6 +27,8 @@ call plug#end()
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'javascript': ['eslint'],
+\  'json': ['prettier'],
+\  'html': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '●'
@@ -36,6 +39,7 @@ autocmd VimEnter * :highlight! ALEErrorSign ctermfg=1 guifg=#ac4142 ctermbg=10 g
 autocmd VimEnter * :highlight! ALEWarningSign ctermfg=3 guifg=#f4bf75 ctermbg=10 guibg=#282828
 autocmd VimEnter * :highlight! ALEError ctermbg=2 guibg=#383838
 autocmd VimEnter * :highlight! ALEWarning ctermbg=2 guibg=#383838
+
 
 " Tags
 let g:gutentags_file_list_command = {
@@ -74,6 +78,7 @@ set foldlevelstart=99
 
 " Theme
 syntax enable
+let g:javascript_plugin_jsdoc = 1
 set termguicolors
 colorscheme base16-default-dark
 let g:lightline = {
