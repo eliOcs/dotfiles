@@ -53,7 +53,6 @@ let g:gutentags_file_list_command = {
 " Mappings
 set timeoutlen=1000 ttimeoutlen=10
 let mapleader = " "
-nnoremap <C-p> :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <Leader>t :Tags<CR>
@@ -62,7 +61,6 @@ nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>gg :GitGutterToggle<CR>
 nnoremap <Leader>ln :set invnumber<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
-nnoremap <leader>G :Grepper -tool rg<cr>
 
 " Identation
 set tabstop=2
@@ -79,6 +77,14 @@ set nofoldenable
 set foldmethod=indent
 set foldlevelstart=99
 
+" Grepper
+let $FZF_DEFAULT_COMMAND='rg --files --smart-case'
+nnoremap <leader>g :Grepper -tool rg<cr>
+
+" Fzf
+nnoremap <C-p> :Files<Cr>
+set rtp+=/usr/local/opt/fzf
+
 " Theme
 syntax enable
 let g:javascript_plugin_jsdoc = 1
@@ -87,12 +93,6 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-" Fzf
-let $FZF_DEFAULT_COMMAND='rg --files --smart-case'
-nnoremap <C-p> :Files<Cr>
-set rtp+=/usr/local/opt/fzf
-
-"set termguicolors
 colorscheme base16-default-dark
 let g:lightline = {
 \  'colorscheme': 'seoul256',
