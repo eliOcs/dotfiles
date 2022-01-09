@@ -30,6 +30,7 @@ let g:ale_fixers = {
 \  'javascript': ['eslint'],
 \  'json': ['prettier'],
 \  'html': ['prettier'],
+\  'css': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '●'
@@ -61,6 +62,7 @@ nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>gg :GitGutterToggle<CR>
 nnoremap <Leader>ln :set invnumber<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
+nnoremap <leader>G :Grepper -tool rg<cr>
 
 " Identation
 set tabstop=2
@@ -84,6 +86,12 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=16
   source ~/.vimrc_background
 endif
+
+" Fzf
+let $FZF_DEFAULT_COMMAND='rg --files --smart-case'
+nnoremap <C-p> :Files<Cr>
+set rtp+=/usr/local/opt/fzf
+
 "set termguicolors
 colorscheme base16-default-dark
 let g:lightline = {
@@ -91,4 +99,3 @@ let g:lightline = {
 \  }
 set laststatus=2
 set noshowmode
-set rtp+=/usr/local/opt/fzf
